@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary Colors */
+  --color-primary: #2C3E50; /* French navy sophistication, trust anchor */
+  --color-primary-50: #EBF0F5;
+  --color-primary-100: #D6E1EB;
+  --color-primary-200: #ADC3D7;
+  --color-primary-300: #84A5C3;
+  --color-primary-400: #5B87AF;
+  --color-primary-500: #2C3E50; /* slate-700 */
+  --color-primary-600: #243548;
+  --color-primary-700: #1C2B40;
+  --color-primary-800: #142238;
+  --color-primary-900: #0C1830;
+
+  /* Secondary Colors */
+  --color-secondary: #8B7355; /* Warm taupe elegance, luxury comfort */
+  --color-secondary-50: #F5F3F0;
+  --color-secondary-100: #EBE7E1;
+  --color-secondary-200: #D7CFC3;
+  --color-secondary-300: #C3B7A5;
+  --color-secondary-400: #AF9F87;
+  --color-secondary-500: #8B7355; /* stone-600 */
+  --color-secondary-600: #7A644A;
+  --color-secondary-700: #69553F;
+  --color-secondary-800: #584634;
+  --color-secondary-900: #473729;
+
+  /* Accent Colors */
+  --color-accent: #C9A96E; /* Champagne gold highlights, premium moments */
+  --color-accent-50: #FAF8F4;
+  --color-accent-100: #F5F1E9;
+  --color-accent-200: #EBE3D3;
+  --color-accent-300: #E1D5BD;
+  --color-accent-400: #D7C7A7;
+  --color-accent-500: #C9A96E; /* yellow-700 */
+  --color-accent-600: #B59A5F;
+  --color-accent-700: #A18B50;
+  --color-accent-800: #8D7C41;
+  --color-accent-900: #796D32;
+
+  /* Background Colors */
+  --color-background: #FEFEFE; /* Pure canvas, property photography focus */
+  --color-surface: #F8F9FA; /* Subtle content separation, gentle depth - gray-50 */
+
+  /* Text Colors */
+  --color-text-primary: #1A1A1A; /* Premium readability, confident authority - gray-900 */
+  --color-text-secondary: #6C757D; /* Clear hierarchy, supporting information - gray-500 */
+
+  /* Status Colors */
+  --color-success: #27AE60; /* Positive confirmation, growth association - green-600 */
+  --color-warning: #F39C12; /* Gentle urgency, opportunity emphasis - orange-500 */
+  --color-error: #E74C3C; /* Helpful guidance, concern without alarm - red-500 */
+
+  /* Shadow Values */
+  --shadow-card: 0 4px 20px rgba(44, 62, 80, 0.08);
+  --shadow-button: 0 2px 8px rgba(44, 62, 80, 0.12);
+  --shadow-subtle: 0 1px 3px rgba(44, 62, 80, 0.06);
+
+  /* Animation Timing */
+  --transition-smooth: 300ms ease-out;
+  --transition-micro: 200ms ease-out;
+}
+
+@layer base {
+  html {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  body {
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  .font-accent {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:bg-primary-700 focus:ring-2 focus:ring-primary-200 focus:outline-none;
+    box-shadow: var(--shadow-button);
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:bg-secondary-700 focus:ring-2 focus:ring-secondary-200 focus:outline-none;
+    box-shadow: var(--shadow-button);
+  }
+
+  .btn-accent {
+    @apply bg-accent text-primary px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:bg-accent-600 focus:ring-2 focus:ring-accent-200 focus:outline-none;
+    box-shadow: var(--shadow-button);
+  }
+
+  .card {
+    @apply bg-white rounded-xl p-6 transition-all duration-300;
+    box-shadow: var(--shadow-card);
+  }
+
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(44, 62, 80, 0.12);
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 border border-surface rounded-lg focus:border-accent focus:ring-2 focus:ring-accent-100 focus:outline-none transition-all duration-200;
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, var(--color-accent), var(--color-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@layer utilities {
+  .transition-smooth {
+    transition: all var(--transition-smooth);
+  }
+
+  .transition-micro {
+    transition: all var(--transition-micro);
+  }
+
+  .shadow-luxury {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-button {
+    box-shadow: var(--shadow-button);
+  }
+
+  .shadow-subtle {
+    box-shadow: var(--shadow-subtle);
+  }
+}
